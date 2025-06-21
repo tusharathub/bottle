@@ -1,0 +1,500 @@
+@font-face {
+  font-family: "Veneer";
+  src: url("./Veneer.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --primary-brown: #5c3a21;
+  --accent-gold: #b17d3d;
+  --light-cream: #f8f5ed;
+  --dark-text: #2c2c2c;
+  --light-text: #ffffff;
+  --border-tan: #d6bda8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  scroll-behavior: smooth;
+  font-family: "Inter", sans-serif;
+  background-color: var(--light-cream);
+  color: var(--dark-text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html.has-scroll-smooth {
+  overflow: hidden;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--light-cream);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid var(--border-tan);
+}
+
+.header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: "Veneer", serif;
+  font-weight: normal;
+  font-size: 2.8rem;
+  color: var(--primary-brown);
+  letter-spacing: 1.5px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: var(--accent-gold);
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.desktop-nav a {
+  font-weight: 600;
+  color: var(--dark-text);
+  text-decoration: none;
+  font-size: 1.05rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.desktop-nav a:hover {
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--accent-gold);
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+  left: 0;
+  background: var(--accent-gold);
+}
+
+main {
+  position: relative;
+  z-index: 10;
+}
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-cream);
+  /* background-image: url("./duff.jpg"); */
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  gap: 1rem;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 20;
+  max-width: 900px;
+}
+
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(3.5rem, 8vw, 6.5rem);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0.5rem 0;
+  line-height: 0.9;
+  color: var(--primary-brown);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content .line {
+  display: block;
+  font-size: 6rem;
+}
+
+.hero-content .highlight {
+  color: var(--accent-gold);
+  font-size: 8rem;
+}
+
+.hero-cta {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: 1rem 2.5rem;
+  background-color: var(--primary-brown);
+  color: var(--light-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-cta:hover {
+  background-color: var(--accent-gold);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.section-intro {
+  background-color: var(--light-cream);
+  border-top: 1px solid var(--border-tan);
+  padding: 5rem 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-grid {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  justify-content: space-between;
+}
+
+.intro-left,
+.intro-right {
+  flex: 1;
+  max-width: 50%;
+}
+
+.small-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent-gold);
+  margin-bottom: 1rem;
+}
+
+.main-heading {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.2;
+  color: var(--primary-brown);
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: var(--dark-text);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+}
+
+.cta-box {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border: 2px solid var(--primary-brown);
+  background-color: var(--primary-brown);
+  color: var(--light-cream);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.cta-box:hover {
+  background-color: transparent;
+  color: var(--primary-brown);
+  border-color: var(--accent-gold);
+}
+
+.ingredients-log {
+  background: transparent;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.ingredients-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  color: var(--primary-brown);
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 1px;
+}
+
+.ingredient-item {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.1);
+  padding-bottom: 1.5rem;
+}
+
+.ingredient-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.ingredient-qty {
+  font-family: "Veneer", serif;
+  font-size: 2.8rem;
+  color: var(--accent-gold);
+  min-width: 90px;
+  text-align: right;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ingredient-text {
+  flex: 1;
+}
+
+.ingredient-text strong {
+  font-family: "Playfair Display", serif;
+  font-size: 1.3rem;
+  color: var(--primary-brown);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.ingredient-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--dark-text);
+  margin: 0;
+}
+
+.collection-section {
+  background-color: var(--primary-brown);
+  padding: 6rem 2.5rem;
+  text-align: center;
+  color: var(--light-cream);
+}
+
+.collection-main-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  color: var(--accent-gold);
+  margin-bottom: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+}
+
+.product-card {
+  background-color: var(--light-cream);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--dark-text);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+.product-img {
+  max-width: 180px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.2));
+}
+
+.product-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--primary-brown);
+  margin-bottom: 0.75rem;
+}
+
+.product-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-family: "Veneer", serif;
+  font-size: 2rem;
+  color: var(--accent-gold);
+  margin-bottom: 1.5rem;
+  font-weight: normal;
+}
+
+.view-more-btn {
+  margin-top: 2rem;
+  background-color: var(--accent-gold);
+  border-color: var(--accent-gold);
+  color: var(--light-cream);
+}
+
+.view-more-btn:hover {
+  background-color: transparent;
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
+.timeline-section {
+  padding: 6rem 2.5rem;
+  border-top: 1px solid var(--border-tan);
+  background-color: var(--light-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.timeline-entry {
+  margin: 0 auto 6rem;
+  padding: 0;
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  max-width: 1000px;
+  position: relative;
+}
+
+.timeline-section::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--border-tan);
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-entry:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-entry:last-of-type {
+  margin-bottom: 0;
+}
+
+.timeline-main-title {
+  padding: 0 2.5rem;
+  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(4rem, 8vw, 7rem);
+  line-height: 1.1;
+  color: var(--primary-brown);
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.timeline-left {
+  flex: 0 0 350px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-date {
+  font-family: "Veneer", serif;
+  font-size: 4.5rem;
+  color: var(--accent-gold);
+  line-height: 1;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--light-cream);
+  padding: 0 10px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-img {
+  width: 100%;
+  max-width: 300px;
+  border: 3px solid var(--primary-brown);
+  padding: 0.75rem;
+  background-color: var(--light-cream);
+  box-shadow: 6px 6px 0 var(--accent-gold);
+  border-radius: 5px;
+  filter: brightness(0.95);
+}
+
+.timeline-right {
+  flex: 1;
+  max-width: 500px;
+  background-color: var(--light-cream);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  color: var(--primary-brown);
+  margin-bottom: 1rem;
+}
+
+.timeline-description {
+  font-size: 1.05rem;
+  color: var(--dark-text);
+  line-height: 1.7;
+}
